@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: Merchants
+  datasource:
+    url: jdbc:jdbc:mysql://127.0.0.1:3306/passbook?autoReconnect=true
+    username: root
+    password: 5660606gsy
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: passbook
+    listener:
+      #配置4个消费者线程监听topic
+      concurrency: 4
+
+server:
+  port: 9527
+
+logging:
+  level: debug
+  file: merchants.log
