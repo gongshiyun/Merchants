@@ -22,7 +22,7 @@ public class Merchants {
      * 商户id,主键
      */
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 

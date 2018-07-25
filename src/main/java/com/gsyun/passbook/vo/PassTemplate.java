@@ -2,7 +2,6 @@ package com.gsyun.passbook.vo;
 
 import com.gsyun.passbook.constant.ErrorCode;
 import com.gsyun.passbook.dao.MerchantsDao;
-import com.gsyun.passbook.entity.Merchants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -57,15 +56,15 @@ public class PassTemplate {
     /**
      * 优惠券开始时间
      */
-    private Data start;
+    private Date start;
 
     /**
      * 优惠券结束时间
      */
     private Date end;
 
-    private ErrorCode validate(MerchantsDao merchantsDao) {
-        if (null == merchantsDao.findById(id)) {
+    public ErrorCode validate(MerchantsDao merchantsDao) {
+        if (!merchantsDao.findById(id).isPresent()) {
             return ErrorCode.MERCHANTS_NOT_EXITS;
         }
 
