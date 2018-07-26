@@ -46,7 +46,7 @@ public class MerchantsServiceTest {
      */
     @Test
     public void testBuildMerchantsInfoById() {
-        Response response = merchantsService.buildMerchantsInfoById(19);
+        Response response = merchantsService.buildMerchantsInfoById(17);
         System.out.println(JSON.toJSONString(response));
     }
 
@@ -64,7 +64,7 @@ public class MerchantsServiceTest {
     @Test
     public void testDropPassTemplate() {
         PassTemplate passTemplate = new PassTemplate();
-        passTemplate.setId(19);
+        passTemplate.setId(17);
         passTemplate.setTitle("gsyun");
         passTemplate.setBackground(1);
         passTemplate.setDesc("详情");
